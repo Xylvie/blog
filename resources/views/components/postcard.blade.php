@@ -3,7 +3,7 @@
         <div class="flex justify-between w-full px-5 py-2 shadow-md">
             <h1 class="text-xl font-bold ">{{ $post->title }}<span class="text-lg font-normal">  - {{ $post->user->name }}</span> </h1>
 
-            @if (auth()->check())
+            @if (auth()->check() && auth()->id() === $post->user_id)
                 <div class="flex gap-2">
                     <a href="{{ route('edit-post', $post->id)  }}" class="hover:font-bold">Edit</a>
                     <form action="{{ route('delete-post', $post->id) }}" method="POST">

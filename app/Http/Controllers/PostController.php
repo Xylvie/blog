@@ -74,7 +74,6 @@ class PostController extends Controller
     public function edit(Post $post)
     {
 
-
         return view('edit')->with('post', $post);
     }
 
@@ -83,6 +82,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $validated = $request->validate([
             'content' => 'required|string',
         ]);
