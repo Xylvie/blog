@@ -13,8 +13,11 @@
 
     </div>
 
-    <div class="flex flex-col">
-            <x-postcard :posts="$posts" />
+    <div class="grid grid-cols-3 gap-5 px-20">
+
+
+        <x-postcard :posts="$posts" />
+
 
     </div>
 

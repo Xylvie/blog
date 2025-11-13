@@ -11,14 +11,17 @@
     
         <header class="flex items-center justify-between px-20 py-3 bg-blue-200">
             <div id="logo">
-                <h1 class="text-3xl font-bold"><span class="font-normal">Web</span>Blog</h1>
+                <a href="{{ route('home') }}" class="text-3xl font-bold"><span class="font-normal">Web</span>Blog</a>
             </div>
 
             <nav class="flex gap-3 text-xl">
-                <a href="" class="px-4 py-1 rounded-md hover:font-bold hover:bg-blue-300">About</a>
-                <a href="" class="px-4 py-1 rounded-md hover:font-bold hover:bg-blue-300">Contact</a>
+
                 @if (auth()->check())
                     <a href="{{ route('dashboard') }}" class="px-4 py-1 rounded-md hover:font-bold hover:bg-blue-300">Dashboard</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="px-4 py-1 rounded-md hover:font-bold hover:bg-blue-300">Log-out</button>
+                    </form>
                 @else
                     <a href="{{ route('login') }}" class="px-4 py-1 rounded-md hover:font-bold hover:bg-blue-300">Log-in</a>
                 @endif
@@ -26,7 +29,7 @@
             </nav>
         </header>
 
-        <main class="w-full">
+        <main class="w-full pb-20">
             @yield('content')
         </main>
     

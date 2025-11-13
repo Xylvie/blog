@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -24,7 +25,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view('posts')->with('categories', $categories);
     }
 
     /**
@@ -63,9 +66,11 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show($slug)
     {
-        //
+        $posts = Post::with('category', 'user')->where('slug', $slug)->firstOrFail();
+
+        return view('posts.show', compact('posts'));
     }
 
     /**

@@ -19,12 +19,12 @@
                 <input type="text" name="title" class="w-full p-2 text-black border rounded-md">
 
                 <label>Category</label>
-                <!-- <select name="category_id" class="w-full p-2 text-black border rounded-md">
-
-                        <option value="Option 1">Option 1</option>
-                        <option value="Option 2">Option 2</option>
-
-                </select> -->
+                <select name="category_id" class="w-full p-2 text-black border rounded-md">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                        
+                </select>
 
                 <label>Content</label>
                 <textarea name="content" class="w-full p-2 text-black border rounded-md"></textarea>

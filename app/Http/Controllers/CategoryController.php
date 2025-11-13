@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -20,7 +21,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories');
     }
 
     /**
@@ -28,7 +29,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:50',
+            'description' => 'required|string|max:255',
+        ]);
+
+        $validated['slug'] = Str::slug($validated['name']);
+
+        Category::create($validated);
+
+        return redirect()->back()->with('success', 'Category Created!');
     }
 
     /**
