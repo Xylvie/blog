@@ -16,7 +16,7 @@
     <section id="heading">
         <div class="flex flex-col justify-center text-center">
             <h1 class="py-10 text-5xl font-bold">Welcome to <span class="font-normal">Web</span>Blog!</h1>
-            <p class="text-2xl">Learn web development, Laravel, React, and more!</p>
+            <p class="text-2xl w-[70%] mx-auto">A full-stack Laravel project featuring authentication, CRUD, category filtering, secure post ownership, and a controlled comment system.</p>
             <div class="mx-auto w-80">
             <a href="{{ route('login') }}"><button class="px-2 py-2 mt-3 text-xl bg-gray-200 rounded-md shadow-lg hover:bg-gray-400 hover:shadow-xl hover:shadow-gray-300">Join our community!</button></a>
             </div>
@@ -41,6 +41,8 @@
             <x-postcard :posts="$posts" />
         </div>
     </section>
+
+    
     
 
 @endsection

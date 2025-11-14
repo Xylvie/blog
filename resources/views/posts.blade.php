@@ -15,10 +15,10 @@
 
             <form action="{{ route('create-post') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <label>Title</label>
+                <label class="text-black">Title</label>
                 <input type="text" name="title" class="w-full p-2 text-black border rounded-md">
 
-                <label>Category</label>
+                <label class="text-black">Category</label>
                 <select name="category_id" class="w-full p-2 text-black border rounded-md">
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -26,13 +26,13 @@
                         
                 </select>
 
-                <label>Content</label>
+                <label class="text-black">Content</label>
                 <textarea name="content" class="w-full p-2 text-black border rounded-md"></textarea>
 
-                <label>Image</label>
+                <label class="text-black">Image</label>
                 <input type="file" name="image" class="w-full p-2 text-gray-200 border rounded-md">
 
-                <label>Status</label>
+                <label class="text-black">Status</label>
                 <select name="status" class="w-full p-2 font-bold text-black border rounded-md">
                     <option value="draft">Draft</option>
                     <option value="published">Published</option>

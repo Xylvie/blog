@@ -15,10 +15,10 @@
 
             <form action="{{ route('create-category') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <label>Name</label>
+                <label class="text-black">Name</label>
                 <input type="text" name="name" class="w-full p-2 text-black border rounded-md">
 
-                <label>Description</label>
+                <label class="text-black">Description</label>
                 <textarea name="description" class="w-full p-2 text-black border rounded-md"></textarea>
 
                 <button type="submit" class="px-4 py-2 mt-3 text-white bg-blue-500 rounded">
