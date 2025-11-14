@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/categories', [CategoryController::class, 'index'])->name('show-category');
 Route::post('posts/{post}/comments', [CommentController::class, 'store'])->name('comment');
 Route::post('commnet/{comment}/delete', [CommentController::class, 'destroy'])->name('delete-comment');
 Route::get('/edit/{post}', [PostController::class, 'edit'])->name('edit-post')->middleware('auth');

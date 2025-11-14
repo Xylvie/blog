@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -11,9 +12,19 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $categories = Category::all();
+
+        $categoryId = $request->categories;
+
+        if($categoryId) {
+            $posts = Post::where('category_id', $categoryId)->get();
+        } else {
+            $posts = Post::all();
+        }
+
+        return view('welcome', compact('posts', 'categories', 'categoryId'));
     }
 
     /**

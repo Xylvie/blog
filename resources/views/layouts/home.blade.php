@@ -9,7 +9,7 @@
 <body>
     
     
-        <header class="flex items-center justify-between px-20 py-3 bg-blue-200">
+        <header class="sticky inset-0 z-0 flex items-center justify-between px-20 py-3 bg-blue-200 shadow-md shadow-gray-700">
             <div id="logo">
                 <a href="{{ route('home') }}" class="text-3xl font-bold"><span class="font-normal">Web</span>Blog</a>
             </div>
@@ -29,10 +29,10 @@
             </nav>
         </header>
 
-        <main class="w-full pb-20">
+        <main class="w-full pb-20 bg-blue-100">
             @yield('content')
         </main>
     
-        <!-- <footer class="flex justify-center">Joshua Neri</footer> -->
+        <footer class="flex items-center justify-center h-10 bg-blue-200"><p>All rights reserved to Joshua Neri</p></footer>
 </body>
 </html>
