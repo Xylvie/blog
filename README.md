@@ -1,7 +1,4 @@
-## ** WebBlog Platform**
-
-```markdown
-# WebBlog
+## ** WebBlog Platform **
 
 A blogging platform with an admin dashboard that allows post creation, category management, and comment moderation. Supports anonymous comments and lets post owners control their content.
 
@@ -21,3 +18,7 @@ A blogging platform with an admin dashboard that allows post creation, category 
 Access /admin to manage posts and categories
 
 Public users can view posts and comment anonymously
+
+Visit site here -> https://webblog.jneri.site/
+
+<img width="1541" height="2263" alt="127 0 0 1_8000_" src="https://github.com/user-attachments/assets/59f7706d-8703-454b-af0a-2046d04f1bb9" />
